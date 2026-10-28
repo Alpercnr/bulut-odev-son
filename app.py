@@ -7,15 +7,15 @@ app = Flask(__name__)
 def home():
     return "Dockerize Edilmiş Bulut Uygulaması - v1 (Sağlam)"
 
-@app.route('/health')
-def health():
-    # Her şey yolunda, Render bu 200 OK yanıtını görünce mutlu olacak.
-    return "OK", 200
-
 # @app.route('/health')
 # def health():
-#     # BİLEREK BOZUYORUZ: Veritabanı veya servis çöktü simülasyonu
-#     return "CRITICAL ERROR", 500
+#     # Her şey yolunda, Render bu 200 OK yanıtını görünce mutlu olacak.
+#     return "OK", 200
+
+@app.route('/health')
+def health():
+    # BİLEREK BOZUYORUZ: Veritabanı veya servis çöktü simülasyonu
+    return "CRITICAL ERROR", 500
 
 
 if __name__ == '__main__':
